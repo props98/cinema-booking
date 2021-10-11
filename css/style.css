@@ -91,7 +91,13 @@ body {
 }
 
 .film-trailer {
+  opacity: 0.7;
   margin: auto;
+  transition: opacity 0.5s;
+}
+
+.film-trailer:hover {
+  opacity: 1;
 }
 
 .film-details {
