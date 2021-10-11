@@ -5,7 +5,7 @@
 }
 
 body {
-  background: #621402;
+  background: #111032;
   font-family: 'Roboto', sans-serif;
   color: #fff;
 }
@@ -13,11 +13,12 @@ body {
 .container {
   max-width: 1170px;
   margin: auto;
+  width: 90%;
 }
 
 .header {
   min-height: 100vh;
-  background: linear-gradient(180deg, rgba(98, 20, 2, 0.31) 0%, #621402 85.62%), url("../img/bg.png") no-repeat center top / cover;
+  background: linear-gradient(180deg, rgba(17, 16, 50, 0) 0%, #111032 85.62%), url("../img/bg.png") no-repeat center top / cover;
 }
 
 .navbar {
@@ -33,6 +34,11 @@ body {
   margin: 0px;
   padding-left: 57px;
 }
+
+.m-menu {
+  display: none;
+}
+
 .menu-item {
   margin-right: 25px;
 }
@@ -149,7 +155,7 @@ body {
 
 .session-date-item:hover {
   background-color: #FE8E05;
-  color: #621402;
+  color: #111032;
 }
 
 .session-month {
@@ -179,7 +185,7 @@ body {
 }
 
 .select-cinema {
-  min-width: 470px;
+  width: 470px;
 }
 
 .select-time {
@@ -193,6 +199,10 @@ body {
   background: rgba(36, 36, 36, 0.18);
   border-radius: 10px;
   margin-bottom: 40px;
+}
+
+.scheme-svg {
+  max-width: 1170px;
 }
 
 .scheme path:not(.light) {
@@ -217,7 +227,7 @@ body {
 .legend {
   display: flex;
   align-items: center;
-  max-width: 1024px;
+  width: 90%;
   margin: auto;
   padding-top: 22px;
   padding-bottom: 38px;
@@ -273,9 +283,211 @@ body {
   text-decoration: none;
 }
 
+/* _____________Day 4 */
+
+@media (max-width: 1200px) {
+
+  .container {
+    max-width: 960px;
+  }
+
+  .select-cinema {
+    width: 100%;
+  }
+
+}
+
+@media (max-width: 992px) {
+  .container {
+    max-width: 750px;
+  }
+
+  .menu-item {
+    margin-right: 20px;
+  }
+
+  .session {
+    flex-wrap: wrap;
+  }
+
+  .session-date {
+    flex-basis: 70%;
+    margin-bottom: 40px;
+  }
+
+  .session-time {
+    order: 2;
+  }
+
+  .session-cinema {
+    order: 3;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .container {
+    max-width: 560px;
+  }
+
+  .nav {
+    position: relative;
+  }
+
+  .menu {
+    position: absolute;
+    top: 40px;
+    left: 20px;
+    padding: 20px;
+    margin-left: 0;
+    flex-direction: column;
+    background: #111032;
+    z-index: 9;
+    border-radius: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(100%);
+    transition: opacity 0.5s, transform 0.5s;
+  }
+
+  .menu-item:not(:last-child) {
+    margin-bottom: 10px;
+  }
+
+  .m-menu {
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: none;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+
+  .is-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+  }
+
+  .film-description {
+    margin-right: 30px;
+  }
+
+  .film {
+    flex-direction: column;
+  }
+
+  .film-trailer {
+    margin-right: auto;
+    margin-left: 0;
+    margin-top: 40px;
+  }
+
+}
+
+/* ___________ Адаптирование для мобильных устройств */
 
 
+@media (max-width: 527px) {
 
+  .container {
+    max-width: 320px;
+  }
+
+  .film-trailer svg {
+    width: 75px;
+    height: 75px;
+  }
+
+  .session {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+    padding-bottom: 40px;
+  }
+
+  .session-cinema {
+    width: 100%;
+  }
+
+  .session-time {
+    width: 100%;
+  }
+
+  .session-date-item {
+    width: 70px;
+  }
+
+  .session-date-item:last-child {
+    margin-right: 0px;
+  }
+
+  .session-month {
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .session-day {
+    font-size: 24px;
+    line-height: 36px;
+  }
+
+  .session-week {
+    font-size: 14px;
+    line-height: 14px;
+  }
+
+  .session-date {
+    margin: 0;
+    width: 100%;
+  }
+
+  .session-label {
+    margin-top: 40px;
+  }
+
+  .select {
+    margin: 0;
+  }
+
+  .select-time {
+    width: 100%;
+  }
+
+  .scheme {
+    width: 900px;
+    overflow-x: auto;
+  }
+
+  .scheme-svg {
+    width: 900px;
+  }
+
+  .legend {
+    flex-direction: column;
+    align-items: start;
+    padding-bottom: 0;
+    padding-left: 36px;
+  }
+
+  .legend-label {
+    font-size: 12px;
+    margin: 0;
+    margin-bottom: 15px;
+  }
+
+  .price-tag {
+    font-size: 40px;
+  }
+
+  .button {
+    font-size: 16px;
+    padding: 27px 7px;
+  }
+
+}
 
 
 
